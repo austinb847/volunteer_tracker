@@ -31,5 +31,9 @@ class Volunteer
     end
   end
 
+  def self.find(volunteer_id)
+
+  end
+
   
 end
