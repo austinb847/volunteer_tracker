@@ -1,0 +1,26 @@
+<h1>Welcome to the Project Tracker</h1>
+<h3>Check out all your current Projects and Volunteers</h3>
+<% if @projects.any? %>
+  <ul class = "projects">
+    <% @projects.each do |project| %>
+    <li><a href="/projects/<%= project.id %>/volunteers"><%= project.title %></a>
+      <div class = "buttons">
+        <form action="/projects/<%= project.id %>/edit">
+          <button type="submit" class="btn btn-primary">Edit Project</button>
+        </form>
+        <form action="/projects/<%= project.id %>" method="post">
+          <input name="_method" type="hidden" value="delete">
+          <button type="submit" class= "btn btn-danger">Delete Project</button>
+        </form>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/projects" method="post">
+  <div class="form-group">
+    <input id= "project_title" name="project_title" class="form-control" type="text" placeholder="Enter a new project">
+    <button type="submit" class="btn-danger createbtn">Create New Project</button>
+  </div>
+</form>
