@@ -53,11 +53,31 @@ describe Volunteer do
 
   describe '.find' do
     it 'returns a volunteer by id' do
-      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
+      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => @project.id, :id => nil})
       volunteer1.save
-      volunteer2 = Volunteer.new({:name => 'Joe', :project_id => 1, :id => nil})
+      volunteer2 = Volunteer.new({:name => 'Joe', :project_id => @project.id, :id => nil})
       volunteer2.save
       expect(Volunteer.find(volunteer1.id)).to eq volunteer1
+    end
+  end
+
+  describe '#update' do
+    it 'updates a volunteer by id' do
+      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => @project.id, :id => nil})
+      volunteer1.save
+      volunteer1.update("James", @project.id)
+      expect(volunteer1.name).to eq "James"
+    end
+  end
+
+  describe '#delete' do
+    it 'deletes a volunteer by id' do
+      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => @project.id, :id => nil})
+      volunteer1.save
+      volunteer2 = Volunteer.new({:name => 'Joe', :project_id => @project.id, :id => nil})
+      volunteer2.save
+      volunteer2.delete
+      expect(Volunteer.all).to eq [volunteer1]
     end
   end
 end
