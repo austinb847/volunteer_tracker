@@ -16,5 +16,14 @@ class Project
   def ==(project_to_compare)
     @title == project_to_compare.title
   end
+
+  def self.all()
+    returned_projects = DB.exec("SELECT * FROM projects;")
+    returned_projects.map() do |project|
+      title = project.fetch("title")
+      id = project.fetch("id").to_i
+      Project.new({:title => title, :id => id})
+    end
+  end
   
 end
