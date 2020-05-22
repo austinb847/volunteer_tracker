@@ -22,3 +22,15 @@ post('/projects') do
   project.save()
   redirect to('/')
 end
+
+get('/projects/:id/edit') do
+  @project = Project.find(params[:id])
+  erb(:edit_project)
+end
+
+patch('/projects/:id') do
+  title = params[:project_title]
+  project = Project.find(params[:id])
+  project.update({:title => title})
+  redirect to('/projects')
+end
