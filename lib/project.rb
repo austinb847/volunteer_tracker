@@ -26,4 +26,8 @@ class Project
     end
   end
   
+  def self.find(prj_id)
+
+  end
+  
 end
