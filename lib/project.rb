@@ -14,7 +14,7 @@ class Project
   end
 
   def ==(project_to_compare)
-    
+    @title == project_to_compare.title
   end
   
 end
