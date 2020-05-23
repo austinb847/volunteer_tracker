@@ -10,7 +10,7 @@ _A Ruby CRUD Postgres app to manage volunteers for specific projects_
   
 ## Setup/Installation Requirements to run locally:
 
-* _Step 1: Clone this repository https://github.com/austinb847/word-definer_
+* _Step 1: Clone this repository https://github.com/austinb847/volunteer_tracker_
 * _Step 2: Cd to new directory_
 * _Step 3: Run Bundle install_
 * _Step 4: Run Ruby app.rb_
