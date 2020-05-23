@@ -1,13 +1,14 @@
-<h4>Add Volunteers for project: <%= @project.title %></h4>  
-
+<div class="jumbotron">
+  <h1>Project: <%= @project.title %></h1>  
+</div>
 <form action="/projects/<%= @project.id %>/volunteers" method="post">
   <div class="form-group">
-    <label for="volunteer_name">Volunteer</label>
+    <label for="volunteer_name">Add Volunteer to Project</label>
     <input id="volunteer_name" name="volunteer_name" class="form-control" type="text">
   </div>
-  <button type="submit" class="btn-success">Add New Volunteer</button>
+  <button type="submit" class="btn btn-success">Add New Volunteer</button>
 </form>
-
+<br>
 <p><a href="/projects">Return to all Projects</a></p>
 
 <% if @project.volunteers %>
@@ -16,11 +17,11 @@
     <li><%= volunteer.name %>
       <div class = "buttons">
         <form action="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>/edit">
-          <button class = "btn-primary" type="submit">Edit</button>
+          <button class = "btn btn-primary" type="submit">Edit</button>
         </form>
         <form action="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>" method="post">
           <input name="_method" type="hidden" value="delete">
-          <button class="btn-danger" type="submit">Delete</button>
+          <button class="btn btn-danger" type="submit">Delete</button>
         </form>
       </div>
     </li>

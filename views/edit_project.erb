@@ -1,5 +1,6 @@
-<h1>Update <%= @project.title%></h1>
-
+<div class="jumbotron">
+  <h1>Update <%= @project.title%></h1>
+</div>
 <form action="/projects/<%= @project.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
     

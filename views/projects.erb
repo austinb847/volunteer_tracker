@@ -1,5 +1,7 @@
-<h1>Welcome to the Project Tracker</h1>
-<h3>Check out all your current Projects and Volunteers</h3>
+<div class="jumbotron">
+  <h1>Welcome to the Project Tracker</h1>
+  <h3>Check out all your current Projects and Volunteers</h3>
+</div>
 <% if @projects.any? %>
   <ul class = "projects">
     <% @projects.each do |project| %>
@@ -22,6 +24,6 @@
   <div class="form-group">
     <input id= "project_title" name="project_title" class="form-control" type="text" placeholder="Enter a new project">
     <br>
-    <button type="submit" class="btn-danger createbtn">Create New Project</button>
+    <button type="submit" class="btn btn-danger">Create New Project</button>
   </div>
 </form>
